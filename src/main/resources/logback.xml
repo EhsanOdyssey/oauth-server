@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property scope="context" name="LOG_PATTERN"
+              value="%date %green(%level) %yellow([%thread]) %cyan(%logger{10}) [%file : %line] %msg%n"/>
+    <appender name="default" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="default"/>
+    </root>
+</configuration>

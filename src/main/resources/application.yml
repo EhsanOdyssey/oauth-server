@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:authdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: null
+    initialization-mode: always
+  flyway:
+    locations: db/migration
+    check-location: false
+    baseline-on-migrate: true
+    enabled: true
+  data:
+    mongodb:
+      uri: mongodb://%s:%s/%s
+      host: localhost
+      port: 27017
+      database: authdb
+      username: null
+      password: null
+swagger:
+  oauth2:
+    uri: http://${server.address}:${server.port}${server.servlet.context-path}/oauth/token
+app:
+  default-locale:
+    lang: fa
+    country: IR
+  files:
+    base-path: extra
+  oauth2:
+    access-token-validity-seconds: 1_800 # 30 * 60 = 30 min
+    refresh-token-validity-seconds: 2_592_000 # 30 * 24 * 60 * 60 = 30 days

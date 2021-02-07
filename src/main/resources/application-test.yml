@@ -1,0 +1,6 @@
+server:
+#  address: localhost
+  address: 5.160.172.250
+  port: 8080
+  servlet:
+    context-path: /authentication-1.0-SNAPSHOT

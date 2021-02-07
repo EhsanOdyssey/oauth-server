@@ -1,0 +1,12 @@
+server:
+  address: localhost
+  port: 8080
+  servlet:
+    context-path: /authentication
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+      settings:
+        web-allow-others: false
